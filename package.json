@@ -1,0 +1,21 @@
+{
+  "name": "onelogin-scim-node",
+  "version": "1.0.0",
+  "description": "A simple SCIM api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "scim",
+    "node"
+  ],
+  "author": "Rich Chetwynd",
+  "license": "MIT",
+  "dependencies": {
+    "lowdb": "^1.0.0",
+    "restify": "^7.0.0",
+    "shortid": "^2.2.8"
+  }
+}
