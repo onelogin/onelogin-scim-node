@@ -9,7 +9,7 @@ server.use(restify.plugins.queryParser())
 server.use(restify.plugins.bodyParser())
 
 // Users
-server.get({ path: '/Users', flags: 'i' }, handlers.users.list)
+server.get('/Users', handlers.users.list)
 server.get('/Users/:id', handlers.users.get)
 server.post('/Users', handlers.users.create)
 server.put('/Users/:id', handlers.users.update)
