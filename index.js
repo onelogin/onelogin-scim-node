@@ -18,7 +18,7 @@ server.del('/Users/:id', handlers.users.delete)
 // Groups
 server.get('/Groups', handlers.groups.list)
 server.post('/Groups', handlers.groups.create)
-server.patch('/Groups', handlers.groups.update)
+server.patch('/Groups/:id', handlers.groups.update)
 
 // Default
 server.get('/', function (req, res, next) {
