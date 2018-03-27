@@ -70,7 +70,9 @@ Ngrok will create an `HTTPS` url that you will need to copy and use when setting
 ### 4. Configure your SCIM app in OneLogin
 If you already have a SCIM app configured then simply paste the ngrok url in the **SCIM Base URL** field on the **Configuration** tab of your app.
 
-If you don't have a SCIM app conifured yet then [follow this guide to create an app](https://developers.onelogin.com/scim/create-app) using the **SCIM Provisioner with SAML (Core Schema)** .
+![onelogin scim app](https://s3.amazonaws.com/onelogin-screenshots/dev_site/images/scim-app.png)
+
+If you don't have a SCIM app conifured yet then [follow this guide to create an app](https://developers.onelogin.com/scim/create-app) using the **SCIM Provisioner with SAML (Core Schema)**.
 
 ### 5. Trigger provisioning tasks and test the app
 Follow [this guide to enable provisioning and test](https://developers.onelogin.com/scim/test-your-scim) your SCIM API.
