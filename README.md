@@ -67,13 +67,20 @@ git clone https://github.com/onelogin/onelogin-scim-node.git
 cd onelogin-scim-node && npm install
 ```
 
-### 2. Run the code
+### 2. Set your Authorization bearer token
+The OneLogin SCIM implementation uses a bearer token supplied in an authorization header of each request. This api will validate the token matches before allowing any provisioning tasks to take place.
+
+Rename `.env.sample` to `.env` and replace `your-bearer-token` with a random string that will represent your bearer token.
+
+You will need to enter the same token into the **SCIM Bearer Token** field when setting up your SCIM app via the OneLogin portal.
+
+### 3. Run the code
 This will start the SCIM API on `http://localhost:8080`
 ```sh
 npm start
 ```
 
-### 3. Expose the API to the internet
+### 4. Expose the API to the internet
 To run this sample end to end with OneLogin it needs to be exposed to the internet so that OneLogin make provisioning requests to the various endpoints.
 
 For this we recommend using [ngrok](https://ngrok.com/).
@@ -92,12 +99,12 @@ Ngrok will create an `HTTPS` url that you will need to copy and use when setting
 
 ![ngrok](https://s3.amazonaws.com/onelogin-screenshots/dev_site/images/ngrok8080.png)
 
-### 4. Configure your SCIM app in OneLogin
+### 5. Configure your SCIM app in OneLogin
 If you already have a SCIM app configured then simply paste the ngrok url in the **SCIM Base URL** field on the **Configuration** tab of your app.
 
 ![onelogin scim app](https://s3.amazonaws.com/onelogin-screenshots/dev_site/images/scim-app.png)
 
 If you don't have a SCIM app conifured yet then [follow this guide to create an app](https://developers.onelogin.com/scim/create-app) using the **SCIM Provisioner with SAML (Core Schema)**.
 
-### 5. Trigger provisioning tasks and test the app
+### 6. Trigger provisioning tasks and test the app
 Follow [this guide to enable provisioning and test](https://developers.onelogin.com/scim/test-your-scim) your SCIM API.
