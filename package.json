@@ -14,6 +14,7 @@
   "author": "Rich Chetwynd",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "lowdb": "^1.0.0",
     "restify": "^7.0.0",
     "restify-errors": "^6.0.0",

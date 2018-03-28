@@ -1,5 +1,6 @@
 'use strict'
 
+require('dotenv').config()
 const restify = require('restify')
 const errors = require('restify-errors')
 const handlers = require('./handlers')
@@ -12,7 +13,8 @@ server.use(restify.plugins.authorizationParser())
 
 // Authorization Header - Bearer token validation
 server.use(function (req, res, next) {
-  if(req.authorization.scheme != 'Bearer' || req.authorization.credentials != ''){
+  if(req.authorization.scheme != 'Bearer' ||
+    req.authorization.credentials != process.env.ONELOGIN_SCIM_BEARER_TOKEN){
     console.log('NOT AUTHORIZED')
     return next(new errors.InvalidCredentialsError('Check bearer token matches OneLogin SCIM app'))
   }
