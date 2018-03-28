@@ -22,7 +22,32 @@ server.patch('/Groups/:id', handlers.groups.update)
 ```
 
 ## User/Group Store
-When you run this sample it will create a temp-db.json file in the root of the project that contains `users` and `groups`. As you run the provisioning tasks in OneLogin this db will be updated.
+When you run this sample it will create a `temp-db.json` file in the root of the project that contains `users` and `groups`. As you run the provisioning tasks in OneLogin this db will be updated.
+
+```js
+{
+  "users": [
+    {
+      "id": "BJCIMyvcG",
+      "username": "kelly",
+      "givenName": "Kelly",
+      "familyName": "Slater",
+      "createdAt": "2018-03-26T21:12:53.794Z",
+      "active": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "SJofhyDqG",
+      "name": "Admin Role",
+      "members": [
+        "BJefgbP9G"
+      ],
+      "createdAt": "2018-03-26T21:54:26.811Z"
+    }
+  ]
+}
+```
 
 This file based db is powered using [LowDB](https://github.com/typicode/lowdb) and is not intended for production use. It is simply for this example.
 
