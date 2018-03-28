@@ -1,12 +1,24 @@
 'use strict'
 
 const restify = require('restify')
+const errors = require('restify-errors')
 const handlers = require('./handlers')
 
 var server = restify.createServer()
 
 server.use(restify.plugins.queryParser())
 server.use(restify.plugins.bodyParser())
+server.use(restify.plugins.authorizationParser())
+
+// Authorization Header - Bearer token validation
+server.use(function (req, res, next) {
+  if(req.authorization.scheme != 'Bearer' || req.authorization.credentials != ''){
+    console.log('NOT AUTHORIZED')
+    return next(new errors.InvalidCredentialsError('Check bearer token matches OneLogin SCIM app'))
+  }
+
+  return next()
+})
 
 // Users
 server.get('/Users', handlers.users.list)
