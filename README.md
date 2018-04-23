@@ -81,7 +81,7 @@ npm start
 ```
 
 ### 4. Expose the API to the internet
-To run this sample end to end with OneLogin it needs to be exposed to the internet so that OneLogin make provisioning requests to the various endpoints.
+To run this sample end to end with OneLogin it needs to be exposed to the internet so that OneLogin can make provisioning requests to the various endpoints.
 
 For this we recommend using [ngrok](https://ngrok.com/).
 
