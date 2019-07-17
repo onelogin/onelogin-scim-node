@@ -16,6 +16,7 @@
   "dependencies": {
     "dotenv": "^5.0.1",
     "lowdb": "^1.0.0",
+    "puppeteer": "^1.18.1",
     "restify": "^7.0.0",
     "restify-errors": "^6.0.0",
     "shortid": "^2.2.8"

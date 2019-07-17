@@ -1,23 +1,22 @@
-'use strict'
+"use strict";
 
-const db = require('../../db')
-const scimUser = require('../../helpers/scim-user')
+const scimUser = require("../../helpers/scim-user");
+const get = require("../../puppets/get");
 
-module.exports = function (req, res, next) {
-  console.log('GET User')
-  console.log(req.params)
+module.exports = async function(req, res, next) {
+  console.log("GET User");
+  console.log(req.params);
 
-  let user = db.get('users')
-               .find({ id: req.params.id })
-               .value()
+  try {
+    const result = await get();
+    console.log(result);
 
-  if(user){
-    let response = scimUser(user)
-    console.log(response)
-    res.send(response)
-  }else{
-    res.send(404) // Not Found
+    const response = scimUser();
+
+    res.send(response);
+  } catch (err) {
+    res.send(err);
+  } finally {
+    return next();
   }
-
-  return next()
-}
+};
