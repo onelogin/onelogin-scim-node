@@ -1,13 +1,9 @@
-'use strict'
+module.exports = function(req, res, next) {
+  console.log("DELETE User");
+  console.log(req.params);
 
-const db = require('../../db')
+  // fake for now
 
-module.exports = function (req, res, next) {
-  console.log('DELETE User')
-  console.log(req.params)
-
-  db.get('users').remove({ id: req.params.id }).write()
-
-  res.send(200)
-  return next()
-}
+  res.send(200);
+  return next();
+};
