@@ -1,17 +1,13 @@
-"use strict";
-
-const shortid = require("shortid");
-const db = require("../../db");
 const scimUser = require("../../helpers/scim-user");
+const create = require("../../puppets/create");
 
-module.exports = function(req, res, next) {
+module.exports = async function(req, res, next) {
   console.log("CREATE User");
   console.log(req.body);
 
   try {
     let user = {
-      id: shortid.generate(),
-      username: req.body.userName,
+      id: req.body.email,
       email: req.body.email,
       givenName: req.body.name.givenName,
       familyName: req.body.name.familyName,
@@ -19,9 +15,7 @@ module.exports = function(req, res, next) {
       active: true
     };
 
-    db.get("users")
-      .push(user)
-      .write();
+    await create(user);
 
     let response = scimUser(user);
 
