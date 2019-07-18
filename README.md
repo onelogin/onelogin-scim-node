@@ -110,3 +110,9 @@ If you don't have a SCIM app conifured yet then [follow this guide to create an 
 
 ### 6. Trigger provisioning tasks and test the app
 Follow [this guide to enable provisioning and test](https://developers.onelogin.com/scim/test-your-scim) your SCIM API.
+
+### O'Reilly Notes
+This demo app provisions a user on O'Reilly Safari
+
+`docker build -t oreilly .`
+`docker run -p 9999:9999 oreilly`
